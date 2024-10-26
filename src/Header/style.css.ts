@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css'
 import { primaryText, unionText } from '../typography.css.ts'
 import { BLACK } from '../color.ts'
-import highlightBackground from './assets/highlight.jpg'
+import highlightBackground from '../assets/highlight.jpg'
 
 export const header = style({
   display: 'flex',
