@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css'
 import { primaryText, unionText } from '../typography.css.ts'
 import { BLACK } from '../color.ts'
-import highlight from '../highlight.css.ts'
+import highlightBackground from './assets/highlight.jpg'
 
 export const header = style({
   display: 'flex',
@@ -39,7 +39,13 @@ export const linkItem = styleVariants({
   normal: {
     padding: '1.125rem'
   },
-  highlight: [highlight]
+  highlight: {
+    padding: '1.125rem',
+
+    backgroundImage: `url(${highlightBackground})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+  }
 })
 
 const navLinkBase = style([unionText, {
