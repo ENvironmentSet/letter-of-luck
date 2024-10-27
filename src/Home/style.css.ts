@@ -138,3 +138,10 @@ export const spin = style({
   animationName: rotate,
   animationDuration: '1.5s'
 })
+
+export const sticker = style({
+  position: 'absolute',
+  zIndex: 1,
+
+  objectFit: 'contain'
+})
