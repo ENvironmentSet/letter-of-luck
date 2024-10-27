@@ -9,16 +9,22 @@ const luckyVicky = fontFace({
 })
 
 export const luckyVickyText = style({
-  fontFamily: `${luckyVicky}, sans-serif`
+  fontFamily: `${luckyVicky}, sans-serif`,
+  wordBreak: 'keep-all',
+  wordWrap: 'break-word',
 })
 
 const union = fontFace({
   src: `url(${unionRegular}) format(woff2)`,
-  fontDisplay: 'swap'
+  fontDisplay: 'swap',
 })
 
 export const unionText = style({
-  fontFamily: `${union}, sans-serif`
+  fontFamily: `${union}, sans-serif`,
+})
+
+export const pretendardText = style({
+  fontFamily: 'Pretendard Variable',
 })
 
 export const primaryText = style({
