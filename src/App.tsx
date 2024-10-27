@@ -1,8 +1,13 @@
 import 'normalize.css'
-import { font } from './typography.css.ts'
+import { Route } from 'wouter'
+import Home from './Home/page.tsx'
 
 function App() {
-  return <h1 className={font}>럭키비키 야-야</h1>
+  return (
+    <>
+      <Route path='/' component={Home} />
+    </>
+  )
 }
 
 export default App
