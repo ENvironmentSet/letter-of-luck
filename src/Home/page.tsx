@@ -1,15 +1,16 @@
 import { useState } from 'react'
+import clsx from 'clsx'
 
 import Header from '../Header/component.tsx'
 import {
   catchphrase,
-  congrats,
-  description, goodbye,
+  congrats, copyButton,
+  description, footer, goodbye,
   heading,
   headline,
   headlineBox,
   luckyVickyTypography,
-  main, typographyBox
+  main, share, shareDescription, spin, typographyBox
 } from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
@@ -80,17 +81,18 @@ function Footer() {
   const [isCopied, setIsCopied] = useState(false)
 
   return (
-    <footer>
-      <span>공유하기</span>
-      <span>이 사이트를 소중한 사람들에게 공유해보세요!</span>
+    <footer className={footer}>
+      <span className={share}>공유하기</span>
+      <span className={shareDescription}>이 사이트를 소중한 사람들에게 공유해보세요!</span>
       <button
         onClick={() => {
           setIsCopied(true)
           navigator.clipboard.writeText('https://lucky-biki-ya-ya.vercel.app').catch(() => {
           })
         }}
+        className={clsx(copyButton, isCopied && spin)}
       />
-      <span>{isCopied && '복사되었습니다!'}</span>
+      <span className={shareDescription} style={{ height: '1rem' }}>{isCopied && '복사되었습니다!'}</span>
     </footer>
   )
 }

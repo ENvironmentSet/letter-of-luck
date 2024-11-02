@@ -1,6 +1,8 @@
-import { style, styleVariants } from '@vanilla-extract/css'
+import { style, styleVariants, keyframes } from '@vanilla-extract/css'
+
 import { luckyVickyText, pretendardText } from '../typography.css.ts'
 import { SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
+import copy from '../assets/copy.jpg'
 
 export const heading = style({
   height: ['100dvh', '100vh'],
@@ -97,3 +99,48 @@ export const goodbye = style([luckyVickyText, {
   marginTop: '-18rem',
   marginRight: '6rem',
 }])
+
+
+export const footer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+  marginTop: '15rem',
+  marginBottom: '4.2rem',
+})
+
+export const share = style([pretendardText, {
+  fontSize: '1.25rem',
+  fontWeight: 500,
+}])
+
+export const shareDescription = style([pretendardText, {
+  fontSize: '0.7rem',
+
+  marginTop: '0.7rem',
+}])
+
+export const copyButton = style({
+  marginTop: '3.25rem',
+
+  backgroundImage: `url(${copy})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'contain',
+  width: '3rem',
+  height: '3rem',
+
+  border: 'none',
+  padding: 0,
+  backgroundColor: 'transparent',
+})
+
+const rotate = keyframes({
+  '0%': { transform: 'rotate(0deg)' },
+  '100%': { transform: 'rotate(360deg)' }
+})
+
+export const spin = style({
+  animationName: rotate,
+  animationDuration: '1.5s'
+})
