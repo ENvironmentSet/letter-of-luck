@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createContext, ReactNode, useContext, useRef, useState } from 'react'
 import clsx from 'clsx'
 
 import Header from '../Header/component.tsx'
@@ -10,7 +10,7 @@ import {
   headline,
   headlineBox,
   luckyVickyTypography,
-  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, catStickerBox
+  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox
 } from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
@@ -56,12 +56,12 @@ export default function Home() {
           />
         </picture>
 
-        <div className={stickerBox}>
+        <StickerSpawnZone>
           <Sticker src={faceSticker} initialPosition={{ x: '12vw', y: '5vh' }} size='8vw' />
           <Sticker src={smileSticker} initialPosition={{ x: '7vw', y: '30vh' }} size='45vw' />
           <Sticker src={letterSticker} initialPosition={{ x: '40vw', y: '26vh' }} size='20vw' />
           <Sticker src={heartSticker} initialPosition={{ x: '72vw', y: '64vh' }} size='21vw' opacity={0.5} />
-        </div>
+        </StickerSpawnZone>
       </section>
       <main className={main}>
         <h1 className={catchphrase}>
@@ -79,9 +79,9 @@ export default function Home() {
         </p>
 
         <span className={congrats}>축하해</span>
-        <div className={catStickerBox}>
+        <StickerSpawnZone position='relative'>
           <Sticker src={catSticker} initialPosition={{x: '24vw', y: '-10vh'}} size='40vw' opacity={0.5} position='relative' />
-        </div>
+        </StickerSpawnZone>
       </main>
       <section className={typographyBox}>
         <span className={luckyVickyTypography.large}>럭키한걸</span>
@@ -128,6 +128,8 @@ interface StickerProps {
 }
 
 function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute' }: StickerProps) {
+  const { push } = useContext(StickerHelpers)
+
   return <img
     src={src}
     alt='sticker on page'
@@ -154,6 +156,8 @@ function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute
       document.addEventListener('mouseup', () => {
         document.removeEventListener('mousemove', onMouseMove)
       }, { once: true })
+
+      push(sticker)
     }}
     onTouchStart={event => {
       const sticker = event.currentTarget
@@ -179,8 +183,33 @@ function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute
       document.addEventListener('touchend', () => {
         document.removeEventListener('touchmove', onTouchMove)
       }, { once: true })
+
+      push(sticker)
     }}
     onDragStart={event => event.preventDefault()}
     className={sticker}
   />
+}
+
+const StickerHelpers = createContext<{ push(sticker: HTMLElement): void }>({ push: () => {} })
+
+interface StickerSpawnZoneProps {
+  position?: 'relative' | 'absolute'
+  children: ReactNode
+}
+
+function StickerSpawnZone({ position = 'absolute', children }: StickerSpawnZoneProps) {
+  const nextZIndex = useRef(0)
+
+  return (
+    <StickerHelpers.Provider value={{
+      push(sticker) {
+        sticker.style.zIndex = String(nextZIndex.current++)
+      }
+    }}>
+      <div style={{ position }} className={stickerBox}>
+        {children}
+      </div>
+    </StickerHelpers.Provider>
+  )
 }

@@ -265,13 +265,6 @@ export const sticker= style({
 })
 
 export const stickerBox = style({
-  position: 'absolute',
-  top: 0,
-  left: 0,
   isolation: 'isolate',
   zIndex: 1,
-})
-
-export const catStickerBox = style({
-  position: 'relative',
 })
