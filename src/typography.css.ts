@@ -21,10 +21,14 @@ const union = fontFace({
 
 export const unionText = style({
   fontFamily: `${union}, sans-serif`,
+  wordBreak: 'keep-all',
+  wordWrap: 'break-word',
 })
 
 export const pretendardText = style({
   fontFamily: 'Pretendard Variable',
+  wordBreak: 'keep-all',
+  wordWrap: 'break-word',
 })
 
 export const primaryText = style({

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import Header from '../Header/component.tsx'
-import { heading, headline, headlineBox } from './style.css.ts'
+import { catchphrase, congrats, description, heading, headline, headlineBox, main } from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
 import headline480x from '../assets/headline-480x.png'
@@ -34,22 +34,22 @@ export default function Home() {
           <img src={headline1920x} alt='이 행운의 편지는 영국에서 최초로 시작되어...' className={headline} />
         </picture>
       </section>
-      <main>
-        <h2>
+      <main className={main}>
+        <h2 className={catchphrase}>
           행복을 전하는 메세지를 입력해보세요!
         </h2>
 
-        <p>
+        <p className={description}>
           사람들과 주고받는 따뜻한 말들이 줄어들고, 함께하는 기쁨이 점점 사라져 가고 있는 것 같습니다.
           만약 조금 더 유쾌하고 재밌는 말들이 오간다면, 우리 사회가 좀 더 부드럽고 따뜻하고,
-          말랑말랑하고 아카시아 꽃 향기 나는 곳이 될 수 있지 않을가요?
+          말랑말랑하고 아카시아 꽃 향기 나는 곳이 될 수 있지 않을까요?
         </p>
-        <p>
+        <p className={description}>
           그래서 만들었습니다. 경쾌하고 즐거운 메게지를 위한 서체 "러키비키 야-야"!
           리듬감 있는 두꺼운 획과 웃는 모양의 빈 공간이 특징인 이 서체를, 기쁨과 활기를 담은 글을 쓸 때 사용해 보세요.
         </p>
 
-        <span>축하해</span>
+        <span className={congrats}>축하해</span>
       </main>
       <section>
         <span>럭키한걸</span>
