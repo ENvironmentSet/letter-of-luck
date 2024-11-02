@@ -98,6 +98,7 @@ export const goodbye = style([luckyVickyText, {
   alignSelf: 'flex-end',
 
   marginTop: '-18rem',
+  marginRight: '1rem'
 }])
 
 
