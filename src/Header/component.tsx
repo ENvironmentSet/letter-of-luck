@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 
 import { eventNavItem, header, link, navBox, navList } from './style.css.ts'
 
-function Header() {
+export default function Header() {
   return (
     <header className={header}>
       <Link to='/' className={link.normal}>LUCKY BIKI YA-YA</Link>
@@ -23,8 +23,6 @@ function Header() {
     </header>
   )
 }
-
-export default Header
 
 interface NavLinkProps {
   to: string,
