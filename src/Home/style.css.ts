@@ -53,11 +53,11 @@ export const main = style({
   flexDirection: 'column',
   alignItems: 'center',
 
-  marginTop: '33vh',
+  marginTop: ['33dvh', '33vh'],
 
   '@media': {
     '(max-width: 767px)': {
-      marginTop: '7vh',
+      marginTop: ['7dvh', '7vh'],
     }
   }
 })
@@ -72,7 +72,7 @@ export const catchphrase = style([luckyVickyText, {
   textAlign: 'center',
 
   marginTop: '0',
-  marginBottom: '10vh',
+  marginBottom: ['10dvh', '10vh'],
 
   '@media': {
     '(min-width: 768px) and (max-width: 1199px)': {
@@ -83,7 +83,7 @@ export const catchphrase = style([luckyVickyText, {
       fontSize: '10rem',
       lineHeight: '6rem',
 
-      marginBottom: '7vh',
+      marginBottom: ['7dvh', '7vh'],
     },
   }
 }])
@@ -137,7 +137,7 @@ export const cat = style({
   objectFit: 'contain',
   width: '45vw',
 
-  marginTop: '-15vh',
+  marginTop: ['-15dvh', '-15vh'],
   marginRight: '3.5rem'
 })
 
