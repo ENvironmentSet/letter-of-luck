@@ -12,6 +12,11 @@ export const heading = style({
   flexDirection: 'column',
 })
 
+export const headerBox = style({
+  isolation: 'isolate',
+  zIndex: 2,
+})
+
 export const headlineBox = style({
   flex: 1,
   alignSelf: 'center',
@@ -24,6 +29,7 @@ export const headline = style({
   objectFit: 'contain',
   height: '100%',
   maxWidth: '100%',
+  userSelect: 'none',
 })
 
 export const main = style({
@@ -33,7 +39,7 @@ export const main = style({
 
   overflow: 'hidden',
 
-  marginTop: ['33dvh', '33vh']
+  marginTop: ['33dvh', '33vh'],
 })
 
 export const catchphrase = style([luckyVickyText, {
@@ -237,4 +243,31 @@ const rotate = keyframes({
 export const spin = style({
   animationName: rotate,
   animationDuration: '1.5s'
+})
+
+export const sticker= style({
+  zIndex: 1,
+
+  objectFit: 'contain',
+
+  cursor: 'grab',
+  userSelect: 'none',
+
+  transition: 'transform 250ms',
+
+  ':hover': {
+    transform: 'scale(1.1)'
+  }
+})
+
+export const stickerBox = style({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  isolation: 'isolate',
+  zIndex: 1,
+})
+
+export const catStickerBox = style({
+  position: 'relative',
 })

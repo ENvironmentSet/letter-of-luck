@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import clsx from 'clsx'
 
 import Header from '../Header/component.tsx'
@@ -10,7 +10,7 @@ import {
   headline,
   headlineBox,
   luckyVickyTypography,
-  main, share, shareDescription, spin, typographyBox, ohlala
+  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, catStickerBox
 } from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
@@ -18,12 +18,19 @@ import headline480x from '../assets/headline-480x.png'
 import headline768x from '../assets/headline-768x.png'
 import headline1200x from '../assets/headline-1200x.png'
 import headline1920x from '../assets/headline-1920x.png'
+import faceSticker from '../assets/face-sticker.png'
+import letterSticker from '../assets/letter-sticker.png'
+import heartSticker from '../assets/heart-sticker.png'
+import smileSticker from '../assets/smile-sticker.png'
+import catSticker from '../assets/cat-sticker.png'
 
 export default function Home() {
   return (
     <>
       <section className={heading}>
-        <Header />
+        <div className={headerBox}>
+          <Header />
+        </div>
 
         <picture className={headlineBox}>
           <source
@@ -41,8 +48,20 @@ export default function Home() {
               ${headline1920x} 1759w,
             `}
           />
-          <img src={headline1920x} alt='이 행운의 편지는 영국에서 최초로 시작되어...' className={headline} />
+          <img
+            src={headline1920x}
+            alt='이 행운의 편지는 영국에서 최초로 시작되어...'
+            className={headline}
+            onDragStart={event => event.preventDefault()}
+          />
         </picture>
+
+        <div className={stickerBox}>
+          <Sticker src={faceSticker} initialPosition={{ x: '12vw', y: '5vh' }} size='8vw' />
+          <Sticker src={smileSticker} initialPosition={{ x: '7vw', y: '30vh' }} size='45vw' />
+          <Sticker src={letterSticker} initialPosition={{ x: '40vw', y: '26vh' }} size='20vw' />
+          <Sticker src={heartSticker} initialPosition={{ x: '72vw', y: '64vh' }} size='21vw' opacity={0.5} />
+        </div>
       </section>
       <main className={main}>
         <h1 className={catchphrase}>
@@ -60,6 +79,9 @@ export default function Home() {
         </p>
 
         <span className={congrats}>축하해</span>
+        <div className={catStickerBox}>
+          <Sticker src={catSticker} initialPosition={{x: '24vw', y: '-10vh'}} size='40vw' opacity={0.5} position='relative' />
+        </div>
       </main>
       <section className={typographyBox}>
         <span className={luckyVickyTypography.large}>럭키한걸</span>
@@ -95,4 +117,48 @@ function Footer() {
       <span className={shareDescription} style={{ height: '1rem' }}>{isCopied && '복사되었습니다!'}</span>
     </footer>
   )
+}
+
+interface StickerProps {
+  src: string
+  initialPosition: { x: string, y: string }
+  size: string
+  opacity?: number
+  position?: 'absolute' | 'relative'
+}
+
+function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute' }: StickerProps) {
+  const delta = useRef({ dx: 0, dy: 0 })
+
+  return <img
+    src={src}
+    alt='sticker on page'
+    style={{ position, top: initialPosition.y, left: initialPosition.x, width: size, opacity }}
+    onMouseDown={event => {
+      const sticker = event.currentTarget
+      const { right } = sticker.getBoundingClientRect()
+      const startX = event.pageX - delta.current.dx
+      const startY = event.pageY - delta.current.dy
+      const rightEdgeDelta = right - event.pageX
+
+      const onMouseMove = (event: MouseEvent) => {
+        const rightEdge = event.pageX + rightEdgeDelta
+
+        if (rightEdge <= window.innerWidth) {
+          delta.current.dx = event.pageX - startX
+          delta.current.dy = event.pageY - startY
+
+          sticker.style.top = `calc(${initialPosition.y} + ${delta.current.dy}px)`
+          sticker.style.left = `calc(${initialPosition.x} + ${delta.current.dx}px)`
+        }
+      }
+
+      document.addEventListener('mousemove', onMouseMove)
+      document.addEventListener('mouseup', () => {
+        document.removeEventListener('mousemove', onMouseMove)
+      }, { once: true })
+    }}
+    onDragStart={event => event.preventDefault()}
+    className={sticker}
+  />
 }
