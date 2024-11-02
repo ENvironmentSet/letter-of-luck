@@ -67,6 +67,7 @@ export const description = style([pretendardText, {
 
   fontWeight: 500,
   fontSize: '0.9rem',
+  lineHeight: '1.5rem',
 
   '@media': {
     '(min-width: 768px) and (max-width: 1199px)': {
@@ -76,7 +77,6 @@ export const description = style([pretendardText, {
       width: '60vw',
 
       fontSize: '1rem',
-      lineHeight: '1.4rem'
     }
   }
 }])
