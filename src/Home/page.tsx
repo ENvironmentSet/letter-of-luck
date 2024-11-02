@@ -128,28 +128,25 @@ interface StickerProps {
 }
 
 function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute' }: StickerProps) {
-  const delta = useRef({ dx: 0, dy: 0 })
-
   return <img
     src={src}
     alt='sticker on page'
     style={{ position, top: initialPosition.y, left: initialPosition.x, width: size, opacity }}
     onMouseDown={event => {
       const sticker = event.currentTarget
-      const { right } = sticker.getBoundingClientRect()
-      const startX = event.pageX - delta.current.dx
-      const startY = event.pageY - delta.current.dy
+      const { x, y, right } = sticker.getBoundingClientRect()
+      const cursorOffsetX = event.pageX - x
+      const cursorOffsetY = event.pageY - y
       const rightEdgeDelta = right - event.pageX
 
       const onMouseMove = (event: MouseEvent) => {
         const rightEdge = event.pageX + rightEdgeDelta
+        const x = event.pageX - cursorOffsetX
+        const y = event.pageY - cursorOffsetY
 
         if (rightEdge <= window.innerWidth) {
-          delta.current.dx = event.pageX - startX
-          delta.current.dy = event.pageY - startY
-
-          sticker.style.top = `calc(${initialPosition.y} + ${delta.current.dy}px)`
-          sticker.style.left = `calc(${initialPosition.x} + ${delta.current.dx}px)`
+          sticker.style.top = `${y}px`
+          sticker.style.left = `${x}px`
         }
       }
 
