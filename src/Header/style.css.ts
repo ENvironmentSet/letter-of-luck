@@ -40,6 +40,7 @@ export const eventNavItem = style({
 
   height: '3rem',
   padding: '0.625rem',
+  marginLeft: '-0.625rem'
 })
 
 const linkBase = style([unionText, {
