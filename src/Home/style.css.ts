@@ -69,13 +69,15 @@ export const congrats = style([luckyVickyText, {
 export const typographyBox = style({
   display: 'flex',
   flexDirection: 'column',
+
+  padding: '3rem',
 })
 
 export const luckyVickyTypography = styleVariants({
   large: [luckyVickyText, {
     color: TYPOGRAPHY,
-    fontSize: '45rem',
-    lineHeight: '24rem'
+    fontSize: '42rem',
+    lineHeight: '22rem'
   }],
   medium: [luckyVickyText, {
     color: TYPOGRAPHY,
@@ -96,7 +98,6 @@ export const goodbye = style([luckyVickyText, {
   alignSelf: 'flex-end',
 
   marginTop: '-18rem',
-  marginRight: '6rem',
 }])
 
 
