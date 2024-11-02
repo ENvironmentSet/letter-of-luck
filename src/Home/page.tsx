@@ -175,7 +175,7 @@ function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute
         event.preventDefault()
       }
 
-      document.addEventListener('touchmove', onTouchMove)
+      document.addEventListener('touchmove', onTouchMove, { passive: false })
       document.addEventListener('touchend', () => {
         document.removeEventListener('touchmove', onTouchMove)
       }, { once: true })
