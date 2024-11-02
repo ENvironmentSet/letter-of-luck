@@ -39,7 +39,11 @@ export const main = style({
 
   overflow: 'hidden',
 
-  marginTop: ['33dvh', '33vh'],
+  '@media': {
+    '(min-width: 1200px)': {
+      marginTop: ['33dvh', '33vh'],
+    }
+  }
 })
 
 export const catchphrase = style([luckyVickyText, {
