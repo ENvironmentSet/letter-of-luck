@@ -31,8 +31,7 @@ export const main = style({
   flexDirection: 'column',
   alignItems: 'center',
 
-  overflowX: 'hidden',
-  overflowY: 'visible',
+  overflow: 'hidden',
 
   marginTop: ['33dvh', '33vh']
 })
