@@ -1,60 +1,54 @@
 import { style, styleVariants } from '@vanilla-extract/css'
-import { primaryText, unionText } from '../typography.css.ts'
-import { BLACK } from '../color.ts'
-import highlightBackground from '../assets/highlight.jpg'
+
+import { plainText, primaryText, unionText } from '../typography.css.ts'
+
+import eventHighlight from '../assets/event-highlight.jpg'
 
 export const header = style({
   display: 'flex',
   alignItems: 'center',
 
-  padding: '0.9rem 2.8rem',
+  height: '3.9rem',
 
-  backgroundColor: 'transparent',
+  padding: '0 1.56rem',
 })
 
-export const titleBox = style({
+export const navBox = style({
   flex: 1,
 })
 
-export const title = style([unionText, {
-  fontSize: '1.75rem',
-  lineHeight: 1.8,
-  color: BLACK,
-  textDecoration: 'none',
-}])
-
-export const linkList = style({
+export const navList = style({
   display: 'flex',
+  justifyContent: 'flex-end',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  gap: '2.5rem',
+  gap: '2rem',
 
   listStyle: 'none',
 
-  paddingLeft: 0,
-  margin: 0,
+  padding: '0',
+  margin: '0',
 })
 
-export const linkItem = styleVariants({
-  normal: {
-    padding: '1.125rem'
-  },
-  highlight: {
-    padding: '1.125rem',
+export const eventNavItem = style({
+  display: 'flex',
+  placeItems: 'center',
 
-    backgroundImage: `url(${highlightBackground})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-  }
+  backgroundImage: `url(${eventHighlight})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'contain',
+  backgroundPosition: 'center',
+
+  height: '3rem',
+  padding: '0.625rem',
 })
 
-const navLinkBase = style([unionText, {
-  fontSize: '1.75rem',
-  lineHeight: 1.8,
+const linkBase = style([unionText, {
+  display: 'block',
+
   textDecoration: 'none',
 }])
 
-export const navLink = styleVariants({
-  normal: [navLinkBase, { color: BLACK }],
-  currentPage: [navLinkBase, primaryText],
+export const link = styleVariants({
+  normal: [linkBase, plainText],
+  currentPage: [linkBase, primaryText]
 })

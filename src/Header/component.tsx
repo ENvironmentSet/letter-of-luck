@@ -1,22 +1,21 @@
 import { Link, useRoute } from 'wouter'
 import { ReactNode } from 'react'
-import { header, linkItem, linkList, navLink, title, titleBox } from './style.css.ts'
+
+import { eventNavItem, header, link, navBox, navList } from './style.css.ts'
 
 function Header() {
   return (
     <header className={header}>
-      <div className={titleBox}>
-        <Link to='/' className={title}>LUCKY BIKI YA-YA</Link>
-      </div>
-      <nav>
-        <ul className={linkList}>
-          <li className={linkItem.normal}>
+      <Link to='/' className={link.normal}>LUCKY BIKI YA-YA</Link>
+      <nav className={navBox}>
+        <ul className={navList}>
+          <li>
             <NavLink to='/about'>ABOUT</NavLink>
           </li>
-          <li className={linkItem.normal}>
+          <li>
             <NavLink to='/download'>DOWNLOAD FONT</NavLink>
           </li>
-          <li className={linkItem.highlight}>
+          <li className={eventNavItem}>
             <NavLink to='/event'>EVENT</NavLink>
           </li>
         </ul>
@@ -28,7 +27,7 @@ function Header() {
 export default Header
 
 interface NavLinkProps {
-  to: string
+  to: string,
   children: ReactNode
 }
 
@@ -36,6 +35,6 @@ function NavLink(props: NavLinkProps) {
   const [match] = useRoute(props.to)
 
   return (
-    <Link className={match ? navLink.currentPage : navLink.normal} {...props} />
+    <Link className={match ? link.currentPage : link.normal} {...props} />
   )
 }
