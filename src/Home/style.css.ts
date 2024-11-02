@@ -37,8 +37,6 @@ export const main = style({
   flexDirection: 'column',
   alignItems: 'center',
 
-  overflow: 'hidden',
-
   '@media': {
     '(min-width: 1200px)': {
       marginTop: ['33dvh', '33vh'],
