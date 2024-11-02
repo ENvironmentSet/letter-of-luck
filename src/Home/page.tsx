@@ -67,7 +67,7 @@ export default function Home() {
           />
           <Sticker
             src={smileSticker}
-            initialPosition={isNarrowDevice ? { x: '0vw', y: '19rem' } : { x: '7vw', y: '30vh' }}
+            initialPosition={isNarrowDevice ? { x: '0vw', y: '16rem' } : { x: '7vw', y: '30vh' }}
             size='45vw'
           />
           <Sticker
