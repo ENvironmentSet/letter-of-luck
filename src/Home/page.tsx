@@ -1,7 +1,16 @@
 import { useState } from 'react'
 
 import Header from '../Header/component.tsx'
-import { catchphrase, congrats, description, heading, headline, headlineBox, main } from './style.css.ts'
+import {
+  catchphrase,
+  congrats,
+  description, goodbye,
+  heading,
+  headline,
+  headlineBox,
+  luckyVickyTypography,
+  main, typographyBox
+} from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
 import headline480x from '../assets/headline-480x.png'
@@ -35,9 +44,9 @@ export default function Home() {
         </picture>
       </section>
       <main className={main}>
-        <h2 className={catchphrase}>
+        <h1 className={catchphrase}>
           행복을 전하는 메세지를 입력해보세요!
-        </h2>
+        </h1>
 
         <p className={description}>
           사람들과 주고받는 따뜻한 말들이 줄어들고, 함께하는 기쁨이 점점 사라져 가고 있는 것 같습니다.
@@ -51,16 +60,16 @@ export default function Home() {
 
         <span className={congrats}>축하해</span>
       </main>
-      <section>
-        <span>럭키한걸</span>
-        <span>울랄랄라랄</span>
-        <span>그렇게 좋은 일이</span>
-        <span>생겼다니 엄청나다</span>
-        <span>정말???!!!! 졸 투 더 업 한다고?</span>
-        <span>축하해 앞으로 너에게</span>
-        <span>좋은 일만 있길...</span>
+      <section className={typographyBox}>
+        <span className={luckyVickyTypography.large}>럭키한걸</span>
+        <span className={luckyVickyTypography.large} style={{ letterSpacing: '-4%', marginBottom: '3rem' }}>울랄랄라랄</span>
+        <span className={luckyVickyTypography.medium}>그렇게 좋은 일이</span>
+        <span className={luckyVickyTypography.medium} style={{ marginBottom: '1rem' }}>생겼다니 엄청나다</span>
+        <span className={luckyVickyTypography.small}>정말???!!!! 졸 투 더 업 한다고?</span>
+        <span className={luckyVickyTypography.small}>축하해 앞으로 너에게</span>
+        <span className={luckyVickyTypography.small}>좋은 일만 있길...</span>
 
-        <span>안녕</span>
+        <span className={goodbye}>안녕</span>
       </section>
       <Footer/>
     </>
