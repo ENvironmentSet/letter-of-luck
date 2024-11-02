@@ -171,6 +171,8 @@ function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute
           sticker.style.top = `${y}px`
           sticker.style.left = `${x}px`
         }
+
+        event.preventDefault()
       }
 
       document.addEventListener('touchmove', onTouchMove)
