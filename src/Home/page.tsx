@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import clsx from 'clsx'
 
 import Header from '../Header/component.tsx'
@@ -153,6 +153,29 @@ function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute
       document.addEventListener('mousemove', onMouseMove)
       document.addEventListener('mouseup', () => {
         document.removeEventListener('mousemove', onMouseMove)
+      }, { once: true })
+    }}
+    onTouchStart={event => {
+      const sticker = event.currentTarget
+      const { x, y, right } = sticker.getBoundingClientRect()
+      const cursorOffsetX = event.touches[0].pageX - x
+      const cursorOffsetY = event.touches[0].pageY - y
+      const rightEdgeDelta = right - event.touches[0].pageX
+
+      const onTouchMove = (event: TouchEvent) => {
+        const rightEdge = event.touches[0].pageX + rightEdgeDelta
+        const x = event.touches[0].pageX - cursorOffsetX
+        const y = event.touches[0].pageY - cursorOffsetY
+
+        if (rightEdge <= window.innerWidth) {
+          sticker.style.top = `${y}px`
+          sticker.style.left = `${x}px`
+        }
+      }
+
+      document.addEventListener('touchmove', onTouchMove)
+      document.addEventListener('touchend', () => {
+        document.removeEventListener('touchmove', onTouchMove)
       }, { once: true })
     }}
     onDragStart={event => event.preventDefault()}
