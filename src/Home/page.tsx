@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useRef, useState } from 'react'
 import clsx from 'clsx'
+import { useMediaQuery } from 'react-responsive'
 
 import Header from '../Header/component.tsx'
 import {
@@ -25,6 +26,8 @@ import smileSticker from '../assets/smile-sticker.png'
 import catSticker from '../assets/cat-sticker.png'
 
 export default function Home() {
+  const isNarrowDevice = useMediaQuery({ query: '(max-width: 767px)' })
+
   return (
     <>
       <section className={heading}>
@@ -57,10 +60,27 @@ export default function Home() {
         </picture>
 
         <StickerSpawnZone>
-          <Sticker src={faceSticker} initialPosition={{ x: '12vw', y: '5vh' }} size='8vw' />
-          <Sticker src={smileSticker} initialPosition={{ x: '7vw', y: '30vh' }} size='45vw' />
-          <Sticker src={letterSticker} initialPosition={{ x: '40vw', y: '26vh' }} size='20vw' />
-          <Sticker src={heartSticker} initialPosition={{ x: '72vw', y: '64vh' }} size='21vw' opacity={0.5} />
+          <Sticker
+            src={faceSticker}
+            initialPosition={isNarrowDevice ? { x: '60vw', y: '18rem' } : { x: '12vw', y: '5vh' }}
+            size={isNarrowDevice ? '18vw' : '8vw'}
+          />
+          <Sticker
+            src={smileSticker}
+            initialPosition={isNarrowDevice ? { x: '0vw', y: '19rem' } : { x: '7vw', y: '30vh' }}
+            size='45vw'
+          />
+          <Sticker
+            src={letterSticker}
+            initialPosition={isNarrowDevice ? { x: '72vw', y: '25rem' } : { x: '40vw', y: '26vh' }}
+            size={isNarrowDevice ? '26vw' : '20vw'}
+          />
+          <Sticker
+            src={heartSticker}
+            initialPosition={isNarrowDevice ? { x: '60vw', y: '4.2rem' } : { x: '72vw', y: '64vh' }}
+            size='21vw'
+            opacity={0.5}
+          />
         </StickerSpawnZone>
       </section>
       <main className={main}>
@@ -79,7 +99,7 @@ export default function Home() {
         </p>
 
         <span className={congrats}>축하해</span>
-        <img src={catSticker} className={cat} />
+        <img src={catSticker} className={cat} alt={'a cat'} />
       </main>
       <section className={typographyBox}>
         <span className={luckyVickyTypography.large}>럭키한걸</span>

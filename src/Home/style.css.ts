@@ -5,11 +5,16 @@ import { SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
 import copy from '../assets/copy.jpg'
 
 export const heading = style({
-  height: ['100dvh', '100vh'],
   width: '100vw',
 
   display: 'flex',
   flexDirection: 'column',
+
+  '@media': {
+    '(min-width: 768px)': {
+      height: ['100dvh', '100vh'],
+    }
+  }
 })
 
 export const headerBox = style({
@@ -21,14 +26,25 @@ export const headlineBox = style({
   flex: 1,
   alignSelf: 'center',
 
+  display: 'flex',
+
   minHeight: '0',
   padding: '0 2.5rem',
+
+  '@media': {
+    '(max-width: 767px)': {
+      paddingTop: '2rem'
+    }
+  }
 })
 
 export const headline = style({
+  flex: 1,
+
   objectFit: 'contain',
-  height: '100%',
   maxWidth: '100%',
+  maxHeight: '100%',
+
   userSelect: 'none',
 })
 
@@ -37,9 +53,11 @@ export const main = style({
   flexDirection: 'column',
   alignItems: 'center',
 
+  marginTop: ['33dvh', '33vh'],
+
   '@media': {
-    '(min-width: 1200px)': {
-      marginTop: ['33dvh', '33vh'],
+    '(max-width: 767px)': {
+      marginTop: ['7dvh', '7vh'],
     }
   }
 })
