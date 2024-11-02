@@ -10,7 +10,7 @@ import {
   headline,
   headlineBox,
   luckyVickyTypography,
-  main, share, shareDescription, spin, typographyBox
+  main, share, shareDescription, spin, typographyBox, ohlala
 } from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
@@ -63,7 +63,7 @@ export default function Home() {
       </main>
       <section className={typographyBox}>
         <span className={luckyVickyTypography.large}>럭키한걸</span>
-        <span className={luckyVickyTypography.large} style={{ letterSpacing: '-4%', marginBottom: '3rem' }}>울랄랄라랄</span>
+        <span className={clsx(luckyVickyTypography.large, ohlala)} style={{ marginBottom: '3rem' }}>울랄랄라랄</span>
         <span className={luckyVickyTypography.medium}>그렇게 좋은 일이</span>
         <span className={luckyVickyTypography.medium} style={{ marginBottom: '1rem' }}>생겼다니 엄청나다</span>
         <span className={luckyVickyTypography.small}>정말???!!!! 졸 투 더 업 한다고?</span>

@@ -47,6 +47,19 @@ export const catchphrase = style([luckyVickyText, {
 
   marginTop: '0',
   marginBottom: ['10dvh', '10vh'],
+
+  '@media': {
+    '(min-width: 768px) and (max-width: 1199px)': {
+      fontSize: '12rem',
+      lineHeight: '7.5rem',
+    },
+    '(min-width: 320px) and (max-width: 767px)': {
+      fontSize: '10rem',
+      lineHeight: '6rem',
+
+      marginBottom: ['7dvh', '7vh'],
+    },
+  }
 }])
 
 export const description = style([pretendardText, {
@@ -54,6 +67,18 @@ export const description = style([pretendardText, {
 
   fontWeight: 500,
   fontSize: '0.9rem',
+
+  '@media': {
+    '(min-width: 768px) and (max-width: 1199px)': {
+      width: '55vw',
+    },
+    '(min-width: 320px) and (max-width: 767px)': {
+      width: '60vw',
+
+      fontSize: '1rem',
+      lineHeight: '1.4rem'
+    }
+  }
 }])
 
 export const congrats = style([luckyVickyText, {
@@ -64,6 +89,18 @@ export const congrats = style([luckyVickyText, {
 
   marginTop: '-7rem',
   marginLeft: '-5rem',
+
+  '@media': {
+    '(min-width: 768px) and (max-width: 1199px)': {
+      marginTop: '-5rem',
+      fontSize: '24rem',
+    },
+    '(min-width: 320px) and (max-width: 767px)': {
+      marginTop: '-3rem',
+      marginLeft: '-2rem',
+      fontSize: '16rem',
+    }
+  }
 }])
 
 export const typographyBox = style({
@@ -77,18 +114,64 @@ export const luckyVickyTypography = styleVariants({
   large: [luckyVickyText, {
     color: TYPOGRAPHY,
     fontSize: '42rem',
-    lineHeight: '22rem'
+    lineHeight: '22rem',
+
+    '@media': {
+      '(min-width: 768px) and (max-width: 1199px)': {
+        fontSize: '28rem',
+        lineHeight: '15rem',
+      },
+      '(min-width: 320px) and (max-width: 767px)': {
+        fontSize: '16rem',
+        lineHeight: '8rem',
+      }
+    }
   }],
   medium: [luckyVickyText, {
     color: TYPOGRAPHY,
     fontSize: '21rem',
-    lineHeight: '12rem'
+    lineHeight: '12rem',
+
+    '@media': {
+      '(min-width: 768px) and (max-width: 1199px)': {
+        fontSize: '14rem',
+        lineHeight: '8rem',
+      },
+      '(min-width: 320px) and (max-width: 767px)': {
+        fontSize: '9rem',
+        lineHeight: '5rem',
+      }
+    }
   }],
   small: [luckyVickyText, {
     color: TYPOGRAPHY,
     fontSize: '11.5rem',
-    lineHeight: '8.5rem'
+    lineHeight: '8.5rem',
+
+    '@media': {
+      '(min-width: 768px) and (max-width: 1199px)': {
+        fontSize: '8rem',
+        lineHeight: '6rem',
+      },
+      '(min-width: 320px) and (max-width: 767px)': {
+        fontSize: '5rem',
+        lineHeight: '4rem',
+      }
+    }
   }]
+})
+
+export const ohlala = style({
+  letterSpacing: '-1.8rem',
+
+  '@media': {
+    '(min-width: 768px) and (max-width: 1199px)': {
+      letterSpacing: '-1rem',
+    },
+    '(min-width: 320px) and (max-width: 767px)': {
+      letterSpacing: '-0.6rem',
+    }
+  }
 })
 
 export const goodbye = style([luckyVickyText, {
@@ -98,7 +181,17 @@ export const goodbye = style([luckyVickyText, {
   alignSelf: 'flex-end',
 
   marginTop: '-18rem',
-  marginRight: '1rem'
+
+  '@media': {
+    '(min-width: 768px) and (max-width: 1199px)': {
+      fontSize: '22rem',
+      marginTop: '-12rem',
+    },
+    '(min-width: 320px) and (max-width: 767px)': {
+      fontSize: '16rem',
+      marginTop: '-6rem',
+    }
+  }
 }])
 
 
