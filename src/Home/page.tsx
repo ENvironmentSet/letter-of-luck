@@ -134,9 +134,9 @@ function Sticker({ src, initialPosition, size, opacity = 1 }: StickerProps) {
     onMouseDown={event => {
       const sticker = event.currentTarget
       const { x, y, right } = sticker.getBoundingClientRect()
-      const cursorOffsetX = event.pageX - x
-      const cursorOffsetY = event.pageY - y
-      const rightEdgeDelta = right - event.pageX
+      const cursorOffsetX = event.pageX - (x + window.scrollX)
+      const cursorOffsetY = event.pageY - (y + window.scrollY)
+      const rightEdgeDelta = right - event.clientX
 
       const onMouseMove = (event: MouseEvent) => {
         const rightEdge = event.pageX + rightEdgeDelta
