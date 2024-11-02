@@ -113,6 +113,18 @@ export const congrats = style([luckyVickyText, {
   }
 }])
 
+export const cat = style({
+  alignSelf: 'flex-end',
+
+  opacity: 0.5,
+
+  objectFit: 'contain',
+  width: '45vw',
+
+  marginTop: ['-15dvh', '-15vh'],
+  marginRight: '3.5rem'
+})
+
 export const typographyBox = style({
   display: 'flex',
   flexDirection: 'column',
@@ -250,7 +262,7 @@ export const spin = style({
 })
 
 export const sticker= style({
-  zIndex: 1,
+  position: 'absolute',
 
   objectFit: 'contain',
 

@@ -10,7 +10,7 @@ import {
   headline,
   headlineBox,
   luckyVickyTypography,
-  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox
+  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, cat
 } from './style.css.ts'
 
 import headline320x from '../assets/headline-320x.png'
@@ -79,9 +79,7 @@ export default function Home() {
         </p>
 
         <span className={congrats}>축하해</span>
-        <StickerSpawnZone position='relative'>
-          <Sticker src={catSticker} initialPosition={{x: '24vw', y: '-10vh'}} size='40vw' opacity={0.5} position='relative' />
-        </StickerSpawnZone>
+        <img src={catSticker} className={cat} />
       </main>
       <section className={typographyBox}>
         <span className={luckyVickyTypography.large}>럭키한걸</span>
@@ -124,16 +122,15 @@ interface StickerProps {
   initialPosition: { x: string, y: string }
   size: string
   opacity?: number
-  position?: 'absolute' | 'relative'
 }
 
-function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute' }: StickerProps) {
+function Sticker({ src, initialPosition, size, opacity = 1 }: StickerProps) {
   const { push } = useContext(StickerHelpers)
 
   return <img
     src={src}
     alt='sticker on page'
-    style={{ position, top: initialPosition.y, left: initialPosition.x, width: size, opacity }}
+    style={{ top: initialPosition.y, left: initialPosition.x, width: size, opacity }}
     onMouseDown={event => {
       const sticker = event.currentTarget
       const { x, y, right } = sticker.getBoundingClientRect()
@@ -194,11 +191,10 @@ function Sticker({ src, initialPosition, size, opacity = 1, position = 'absolute
 const StickerHelpers = createContext<{ push(sticker: HTMLElement): void }>({ push: () => {} })
 
 interface StickerSpawnZoneProps {
-  position?: 'relative' | 'absolute'
   children: ReactNode
 }
 
-function StickerSpawnZone({ position = 'absolute', children }: StickerSpawnZoneProps) {
+function StickerSpawnZone({ children }: StickerSpawnZoneProps) {
   const nextZIndex = useRef(0)
 
   return (
@@ -207,7 +203,7 @@ function StickerSpawnZone({ position = 'absolute', children }: StickerSpawnZoneP
         sticker.style.zIndex = String(nextZIndex.current++)
       }
     }}>
-      <div style={{ position }} className={stickerBox}>
+      <div className={stickerBox}>
         {children}
       </div>
     </StickerHelpers.Provider>
