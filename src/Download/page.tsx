@@ -34,7 +34,7 @@ export default function Download() {
           <Clover size='5vw' offset={{ x: '-16vw', y: '22vh' }} src={cloverFilled} />
         </main>
       </div>
-      <a href='/public/LuckyVicky-Regular.otf' download ref={downloadLink} className={downloadButton} />
+      <a href='/LuckyVicky-Regular.otf' download ref={downloadLink} className={downloadButton} />
     </>
   )
 }
