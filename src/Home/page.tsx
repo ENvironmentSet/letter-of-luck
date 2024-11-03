@@ -95,7 +95,7 @@ export default function Home() {
         </p>
 
         <span className={congrats}>축하해</span>
-        <img src={catSticker} className={cat} alt={'a cat'} />
+        <img src={catSticker} className={cat} alt='a cat' />
       </main>
       <section className={typographyBox}>
         <span className={luckyVickyTypography.large}>럭키한걸</span>
