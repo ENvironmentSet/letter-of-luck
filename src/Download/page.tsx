@@ -2,6 +2,7 @@ import Header from '../Header/component.tsx'
 import { useEffect, useRef } from 'react'
 import { clover, downloadButton, main, message, page } from './style.css.ts'
 
+import font from '../assets/LuckyVicky-Regular.otf'
 import cloverEmpty from '../assets/clover-empty.svg'
 import cloverEmptyLarge from '../assets/clover-empty-large.svg'
 import cloverFilled from '../assets/clover-filled.svg'
@@ -34,7 +35,7 @@ export default function Download() {
           <Clover size='5vw' offset={{ x: '-16vw', y: '22vh' }} src={cloverFilled} />
         </main>
       </div>
-      <a href='/LuckyVicky-Regular.otf' download ref={downloadLink} className={downloadButton} />
+      <a href={font} download ref={downloadLink} className={downloadButton} />
     </>
   )
 }
