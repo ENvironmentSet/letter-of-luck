@@ -3,7 +3,7 @@ import { BLACK, LETTER_BACKGROUND } from '../color.ts'
 import { luckyVickyText } from '../typography.css.ts'
 
 export const page = style({
-  height: ['100dvh', '85vh'],
+  height: ['85vh', '100dvh'],
 
   display: 'flex',
   flexDirection: 'column',
