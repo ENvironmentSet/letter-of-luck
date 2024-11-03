@@ -1,4 +1,5 @@
 export const PRIMARY = '#00D9D2'
+export const LETTER_BACKGROUND = '#30F3EC'
 export const SECONDARY = '#3E3E3EE6'
 export const TYPOGRAPHY = '#232323E6'
 export const BLACK = '#000000E6'
