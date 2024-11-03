@@ -3,6 +3,7 @@ import { style, styleVariants } from '@vanilla-extract/css'
 import { plainText, primaryText, unionText } from '../typography.css.ts'
 
 import eventHighlight from '../assets/event-highlight.jpg'
+import eventHighlightActive from '../assets/event-highlight-active.webp'
 
 export const header = style({
   display: 'flex',
@@ -29,11 +30,10 @@ export const navList = style({
   margin: '0',
 })
 
-export const eventNavItem = style({
+const eventNavItemBase = style({
   display: 'flex',
   placeItems: 'center',
 
-  backgroundImage: `url(${eventHighlight})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'contain',
   backgroundPosition: 'center',
@@ -41,6 +41,15 @@ export const eventNavItem = style({
   height: '3rem',
   padding: '0.625rem',
   marginLeft: '-0.625rem'
+})
+
+export const eventNavItem = styleVariants({
+  inactive: [eventNavItemBase, {
+    backgroundImage: `url(${eventHighlight})`,
+  }],
+  active: [eventNavItemBase, {
+    backgroundImage: `url(${eventHighlightActive})`,
+  }]
 })
 
 const linkBase = style([unionText, {

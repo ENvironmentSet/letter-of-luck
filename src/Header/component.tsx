@@ -4,6 +4,8 @@ import { ReactNode } from 'react'
 import { eventNavItem, header, link, navBox, navList } from './style.css.ts'
 
 export default function Header() {
+  const [eventMatch] = useRoute('/event')
+
   return (
     <header className={header}>
       <Link to='/' className={link.normal}>LUCKY BIKI YA-YA</Link>
@@ -15,7 +17,7 @@ export default function Header() {
           <li>
             <NavLink to='/download'>DOWNLOAD FONT</NavLink>
           </li>
-          <li className={eventNavItem}>
+          <li className={eventMatch ? eventNavItem.active : eventNavItem.inactive}>
             <NavLink to='/event'>EVENT</NavLink>
           </li>
         </ul>
