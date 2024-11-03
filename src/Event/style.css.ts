@@ -18,6 +18,12 @@ export const main = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
+
+  '@media': {
+    '(max-width: 1199px)': {
+      justifyContent: 'flex-start',
+    }
+  }
 })
 
 export const article = style({
@@ -96,7 +102,7 @@ export const slider = style({
       animationName: autoSlideSmallDevice,
       animationDuration: '60s',
 
-      marginTop: '10rem'
+      marginTop: '10vh',
     }
   }
 })
@@ -116,43 +122,41 @@ export const slide = style({
   }
 })
 
-
 export const credit = style({
   flex: 1,
 
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'flex-end',
+  justifyContent: 'flex-end',
+
+  padding: '6vh 4rem 2rem 4rem',
 
   backgroundColor: BEIGE,
-
-  padding: '8rem 5rem 2rem 5rem',
-
-  marginTop: '8rem'
 })
 
-export const contributors = style({
+export const space = style({
   flex: 1,
+})
 
-  alignSelf: 'flex-end',
+export const contributors = style([pretendardText, {
+  color: BLACK,
 
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start',
-  gap: '0.4rem',
-})
 
-export const contributor = style([pretendardText, {
-  margin: '0'
+  gap: '0.8rem',
 }])
 
-export const name = style({
-  marginLeft: '1.2rem',
+export const contributor = style({
+  display: 'flex',
+  gap: '0.8rem',
 
-  color: BLACK,
-  textDecoration: 'none',
+  margin: '0',
 })
 
 export const copyright = style([pretendardText, {
-  margin: '0',
-  alignSelf: 'flex-start'
+  alignSelf: 'flex-start',
+
+  margin: '0'
 }])

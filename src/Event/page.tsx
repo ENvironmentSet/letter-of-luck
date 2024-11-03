@@ -1,6 +1,19 @@
 import Header from '../Header/component.tsx'
 import { ReactNode } from 'react'
-import { article, description, link, main, page, slide, slider, sliderBox, title, credit, copyright, contributors, contributor, name } from './style.css.ts'
+import {
+  article, contributor,
+  contributors, copyright,
+  credit,
+  description,
+  link,
+  main,
+  page,
+  slide,
+  slider,
+  sliderBox,
+  space,
+  title
+} from './style.css.ts'
 import { useMediaQuery } from 'react-responsive'
 
 import goods1 from '../assets/goods1.jpg'
@@ -54,16 +67,25 @@ function Slider({ children }: SliderProps) {
 
 function Footer() {
   return (
-    <footer className={credit}>
-      <section className={contributors}>
-        <p className={contributor}>Design<a href='https://www.instagram.com/yojinius/'
-                                            className={name}>최여진(@yojinius)</a></p>
-        <p className={contributor}>Development<a href='https://github.com/ENvironmentSet'
-                                                 className={name}>서재원(@homemade.frenchfries)</a></p>
-        <p className={contributor}>Font Design Guidance<a href='https://www.instagram.com/jaehn._.design/'
-                                                          className={name}>조재훈(@jaehn._.design)</a></p>
-      </section>
-      <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
-    </footer>
+    <>
+      <div className={space}/>
+      <footer className={credit}>
+        <section className={contributors}>
+          <p className={contributor}>
+            Design
+            <a href='https://www.instagram.com/yojinius/' className={link}>최여진(@yojinius)</a>
+          </p>
+          <p className={contributor}>
+            Development
+            <a href='https://github.com/ENvironmentSet' className={link}>서재원(@homemade.frenchfries)</a>
+          </p>
+          <p className={contributor}>
+            Font Design Guidance
+            <a href='https://www.instagram.com/jaehn._.design/' className={link}>조재훈(@jaehn._.design)</a>
+          </p>
+        </section>
+        <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
+      </footer>
+    </>
   )
 }
