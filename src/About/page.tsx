@@ -38,9 +38,10 @@ function Letter() {
       const startY = event.touches[0].pageY - delta
       const onTouchMove = (event: TouchEvent) => {
         if (letterBoxRef.current) letterBoxRef.current.style.transform = `translateZ(${delta = event.touches[0].pageY - startY}px)`
+        event.preventDefault()
       }
 
-      document.addEventListener('touchmove', onTouchMove, { passive: true })
+      document.addEventListener('touchmove', onTouchMove, { passive: false })
       document.addEventListener('touchend', () => {
         document.removeEventListener('touchmove', onTouchMove)
       }, { once: true })
