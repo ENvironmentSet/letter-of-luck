@@ -54,6 +54,9 @@ export const headline = style({
       flex: 1,
 
       maxHeight: '100%',
+    },
+    '(max-width: 767px)': {
+      height: '60vw',
     }
   }
 })
@@ -146,6 +149,7 @@ export const cat = style({
 
   objectFit: 'contain',
   width: '45vw',
+  aspectRatio: 166 / 300,
 
   marginTop: ['-15dvh', '-15vh'],
   marginRight: '3.5rem'

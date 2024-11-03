@@ -176,8 +176,8 @@ function Sticker({ src, initialPosition, size, opacity = 1 }: StickerProps) {
     onTouchStart={event => {
       const sticker = event.currentTarget
       const { x, y, right } = sticker.getBoundingClientRect()
-      const cursorOffsetX = event.touches[0].pageX - x
-      const cursorOffsetY = event.touches[0].pageY - y
+      const cursorOffsetX = event.touches[0].pageX - (x + window.scrollX)
+      const cursorOffsetY = event.touches[0].pageY - (y + window.scrollY)
       const rightEdgeDelta = right - event.touches[0].pageX
 
       const onTouchMove = (event: TouchEvent) => {
