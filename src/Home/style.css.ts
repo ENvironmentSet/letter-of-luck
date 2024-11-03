@@ -1,7 +1,7 @@
 import { style, styleVariants, keyframes } from '@vanilla-extract/css'
 
 import { luckyVickyText, pretendardText } from '../typography.css.ts'
-import { SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
+import { LETTER_BACKGROUND, SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
 import copy from '../assets/copy.jpg'
 
 export const heading = style({
@@ -253,7 +253,6 @@ export const footer = style({
   alignItems: 'center',
 
   marginTop: '15rem',
-  marginBottom: '4.2rem',
 })
 
 export const share = style([pretendardText, {
@@ -290,6 +289,45 @@ export const spin = style({
   animationName: rotate,
   animationDuration: '1.5s'
 })
+
+export const credit = style({
+  alignSelf: 'stretch',
+
+  display: 'flex',
+  flexDirection: 'column',
+
+  height: '6rem',
+
+  backgroundColor: LETTER_BACKGROUND,
+
+  padding: '3rem 4rem 1.5rem 4rem',
+
+  marginTop: '4.2rem',
+})
+
+export const contributors = style({
+  flex: 1,
+
+  alignSelf: 'flex-end',
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between'
+})
+
+export const contributor = style([pretendardText, {
+  margin: '0'
+}])
+
+export const name = style({
+  marginLeft: '1.2rem',
+})
+
+export const copyright = style([pretendardText, {
+  margin: '0',
+  alignSelf: 'flex-start'
+}])
 
 export const sticker= style({
   position: 'absolute',

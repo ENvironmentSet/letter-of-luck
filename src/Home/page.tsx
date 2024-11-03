@@ -11,7 +11,8 @@ import {
   headline,
   headlineBox,
   luckyVickyTypography,
-  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, cat
+  main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, cat,
+  credit, copyright, contributor, name, contributors
 } from './style.css.ts'
 
 import headline480x from '../assets/headline-480x.png'
@@ -130,6 +131,15 @@ function Footer() {
         aria-label='a share button'
       />
       <span className={shareDescription} style={{ height: '1rem' }}>{isCopied && '복사되었습니다!'}</span>
+
+      <section className={credit}>
+        <section className={contributors}>
+          <p className={contributor}>Design<span className={name}>최여진(@yojinius)</span></p>
+          <p className={contributor}>Development<span className={name}>서재원(@homemade.frenchfries)</span></p>
+          <p className={contributor}>Font Design Guidance<span className={name}>조재훈(@jaehn._.design)</span></p>
+        </section>
+        <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
+      </section>
     </footer>
   )
 }
@@ -141,7 +151,7 @@ interface StickerProps {
   opacity?: number
 }
 
-function Sticker({ src, initialPosition, size, opacity = 1 }: StickerProps) {
+function Sticker({src, initialPosition, size, opacity = 1}: StickerProps) {
   const { push } = useContext(StickerHelpers)
 
   return <img
