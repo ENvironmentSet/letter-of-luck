@@ -17,11 +17,11 @@ import {
 import headline480x from '../assets/headline-480x.png'
 import headline1200x from '../assets/headline-1200x.png'
 import headline1920x from '../assets/headline-1920x.png'
-import faceSticker from '../assets/face-sticker.png'
-import letterSticker from '../assets/letter-sticker.png'
+import faceSticker from '../assets/face-sticker.webp'
+import letterSticker from '../assets/letter-sticker.webp'
 import heartSticker from '../assets/heart-sticker.png'
-import smileSticker from '../assets/smile-sticker.png'
-import catSticker from '../assets/cat-sticker.png'
+import smileSticker from '../assets/smile-sticker.webp'
+import catSticker from '../assets/cat-sticker.webp'
 
 export default function Home() {
   const isNarrowDevice = useMediaQuery({ query: '(max-width: 767px)' })
