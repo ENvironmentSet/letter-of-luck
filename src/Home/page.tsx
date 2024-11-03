@@ -14,9 +14,7 @@ import {
   main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, cat
 } from './style.css.ts'
 
-import headline320x from '../assets/headline-320x.png'
 import headline480x from '../assets/headline-480x.png'
-import headline768x from '../assets/headline-768x.png'
 import headline1200x from '../assets/headline-1200x.png'
 import headline1920x from '../assets/headline-1920x.png'
 import faceSticker from '../assets/face-sticker.png'
@@ -38,18 +36,16 @@ export default function Home() {
         <picture className={headlineBox}>
           <source
             media='(max-width: 767px)'
-            srcSet={`
-              ${headline320x} 298w,
-              ${headline480x} 429w,
-            `}
+            srcSet={`${headline480x} 429w`}
+            sizes='100vw'
           />
           <source
             media='(min-width: 768px)'
             srcSet={`
-              ${headline768x} 700w,
               ${headline1200x} 1119w,
               ${headline1920x} 1759w,
             `}
+            sizes='100vw'
           />
           <img
             src={headline1920x}

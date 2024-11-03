@@ -23,29 +23,39 @@ export const headerBox = style({
 })
 
 export const headlineBox = style({
-  flex: 1,
   alignSelf: 'center',
 
   display: 'flex',
+  flexDirection: 'column',
 
   minHeight: '0',
-  padding: '0 2.5rem',
 
   '@media': {
     '(max-width: 767px)': {
       paddingTop: '2rem'
+    },
+    '(min-width: 768px)': {
+      flex: 1,
     }
   }
 })
 
 export const headline = style({
-  flex: 1,
-
   objectFit: 'contain',
-  maxWidth: '100%',
-  maxHeight: '100%',
+
+  width: '100vw',
+  padding: '0 2.5rem',
+  boxSizing: 'border-box',
 
   userSelect: 'none',
+
+  '@media': {
+    '(min-width: 768px)': {
+      flex: 1,
+
+      maxHeight: '100%',
+    }
+  }
 })
 
 export const main = style({
