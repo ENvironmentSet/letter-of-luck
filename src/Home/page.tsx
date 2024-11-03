@@ -134,9 +134,9 @@ function Footer() {
 
       <section className={credit}>
         <section className={contributors}>
-          <p className={contributor}>Design<span className={name}>최여진(@yojinius)</span></p>
-          <p className={contributor}>Development<span className={name}>서재원(@homemade.frenchfries)</span></p>
-          <p className={contributor}>Font Design Guidance<span className={name}>조재훈(@jaehn._.design)</span></p>
+          <p className={contributor}>Design<a href='https://www.instagram.com/yojinius/' className={name}>최여진(@yojinius)</a></p>
+          <p className={contributor}>Development<a href='https://github.com/ENvironmentSet' className={name}>서재원(@homemade.frenchfries)</a></p>
+          <p className={contributor}>Font Design Guidance<a href='https://www.instagram.com/jaehn._.design/' className={name}>조재훈(@jaehn._.design)</a></p>
         </section>
         <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
       </section>

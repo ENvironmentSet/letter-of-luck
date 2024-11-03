@@ -1,7 +1,7 @@
 import { style, styleVariants, keyframes } from '@vanilla-extract/css'
 
 import { luckyVickyText, pretendardText } from '../typography.css.ts'
-import { LETTER_BACKGROUND, SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
+import { BLACK, LETTER_BACKGROUND, SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
 import copy from '../assets/copy.jpg'
 
 export const heading = style({
@@ -322,6 +322,9 @@ export const contributor = style([pretendardText, {
 
 export const name = style({
   marginLeft: '1.2rem',
+
+  color: BLACK,
+  textDecoration: 'none',
 })
 
 export const copyright = style([pretendardText, {
