@@ -127,6 +127,7 @@ function Footer() {
           })
         }}
         className={clsx(copyButton, isCopied && spin)}
+        aria-label='a share button'
       />
       <span className={shareDescription} style={{ height: '1rem' }}>{isCopied && '복사되었습니다!'}</span>
     </footer>
