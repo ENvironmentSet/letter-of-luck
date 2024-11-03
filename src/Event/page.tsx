@@ -83,8 +83,8 @@ function Footer() {
             Font Design Guidance
             <a href='https://www.instagram.com/jaehn._.design/' className={link}>조재훈(@jaehn._.design)</a>
           </p>
+          <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
         </section>
-        <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
       </footer>
     </>
   )

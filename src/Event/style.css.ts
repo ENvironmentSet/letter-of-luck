@@ -156,7 +156,8 @@ export const contributor = style({
 })
 
 export const copyright = style([pretendardText, {
-  alignSelf: 'flex-start',
+  fontSize: '0.9rem',
 
-  margin: '0'
+  marginTop: '0.6rem',
+  marginBottom: '0',
 }])
