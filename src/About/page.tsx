@@ -22,6 +22,7 @@ function Letter() {
 
     const onWheel = (event: WheelEvent) => {
       if (letterBoxRef.current) letterBoxRef.current.style.transform = `translateZ(${delta += event.deltaY}px)`
+      event.preventDefault()
     }
 
     document.addEventListener('wheel', onWheel)
