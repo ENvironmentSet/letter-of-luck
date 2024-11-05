@@ -44,7 +44,7 @@ export const headline = style({
   objectFit: 'contain',
 
   width: '100vw',
-  padding: '0 2.5rem',
+  padding: '0 1rem',
   boxSizing: 'border-box',
 
   userSelect: 'none',
@@ -54,9 +54,6 @@ export const headline = style({
       flex: 1,
 
       maxHeight: '100%',
-    },
-    '(max-width: 767px)': {
-      height: '60vw',
     }
   }
 })
