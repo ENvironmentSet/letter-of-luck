@@ -55,7 +55,7 @@ export const headline = style({
 
       maxHeight: '100%',
     },
-    '@(max-width: 767px)': {
+    '(max-width: 767px)': {
       height: '60vw',
     }
   }
