@@ -259,7 +259,7 @@ export const share = style([pretendardText, {
 }])
 
 export const shareDescription = style([pretendardText, {
-  fontSize: '0.7rem',
+  fontSize: '0.8rem',
 
   marginTop: '0.7rem',
 }])
@@ -270,8 +270,10 @@ export const copyButton = style({
   backgroundImage: `url(${copy})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'contain',
-  width: '3rem',
-  height: '3rem',
+  width: '3.4rem',
+  height: '3.4rem',
+
+  cursor: 'grab',
 
   border: 'none',
   padding: 0,
