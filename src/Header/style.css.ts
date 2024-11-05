@@ -53,7 +53,7 @@ export const eventNavItem = styleVariants({
 const linkBase = style([unionText, {
   display: 'block',
 
-  fontSize: '1.5rem',
+  fontSize: '1.3rem',
   fontWeight: 500,
 
   textDecoration: 'none',

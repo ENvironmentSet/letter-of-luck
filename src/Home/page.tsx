@@ -62,7 +62,7 @@ export default function Home() {
           <Sticker
             src={faceSticker}
             initialPosition={isNarrowDevice ? { x: '60vw', y: '18rem' } : { x: '12vw', y: '5vh' }}
-            size={isNarrowDevice ? '18vw' : '16vw'}
+            size={isNarrowDevice ? '18vw' : '12vw'}
           />
           <Sticker
             src={smileSticker}
@@ -76,7 +76,7 @@ export default function Home() {
           />
           <Sticker
             src={heartSticker}
-            initialPosition={isNarrowDevice ? { x: '60vw', y: '4.2rem' } : { x: '72vw', y: '64vh' }}
+            initialPosition={isNarrowDevice ? { x: '60vw', y: '6.4rem' } : { x: '72vw', y: '64vh' }}
             size='21vw'
           />
         </StickerSpawnZone>
