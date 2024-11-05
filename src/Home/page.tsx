@@ -125,7 +125,7 @@ function Footer() {
       <button
         onClick={() => {
           setIsCopied(true)
-          navigator.clipboard.writeText('https://luckyvicky-yaya.com').catch(() => {
+          navigator.clipboard.writeText('https://luckyvicky-ya-ya.com').catch(() => {
           })
         }}
         className={clsx(copyButton, isCopied && spin)}
