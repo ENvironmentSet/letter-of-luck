@@ -15,9 +15,9 @@ import {
   credit, copyright, contributor, name, contributors
 } from './style.css.ts'
 
-import headline480x from '../assets/headline-480x.png'
-import headline1200x from '../assets/headline-1200x.png'
-import headline1920x from '../assets/headline-1920x.png'
+import headline480x from '../assets/headline-480x.webp'
+import headline768x from '../assets/headline-768x.webp'
+import headline1920x from '../assets/headline-1920x.svg'
 import faceSticker from '../assets/face-sticker.svg'
 import letterSticker from '../assets/letter-sticker.svg'
 import heartSticker from '../assets/heart-sticker.svg'
@@ -37,14 +37,16 @@ export default function Home() {
         <picture className={headlineBox}>
           <source
             media='(max-width: 767px)'
-            srcSet={`${headline480x} 429w`}
+            srcSet={`
+              ${headline480x} 429w,
+              ${headline768x} 693w
+            `}
             sizes='100vw'
           />
           <source
             media='(min-width: 768px)'
             srcSet={`
-              ${headline1200x} 1119w,
-              ${headline1920x} 1759w,
+              ${headline1920x} 1755w,
             `}
             sizes='100vw'
           />
