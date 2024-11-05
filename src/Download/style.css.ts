@@ -35,13 +35,18 @@ export const message = style([luckyVickyText, {
 }])
 
 const shoot = keyframes({
-  from: {
-    transform: 'translate(0, 0)',
+  '0%': {
+    transform: 'translate(0, 0) scale(0.7)',
+    opacity: 0,
   },
-  to: {
-    transform: `translate(var(--xOffSet), var(--yOffSet))`,
-  }
-})
+  '70%': {
+    transform: `translate(calc(var(--xOffSet) * 0.9), calc(var(--yOffSet) * 0.9)) scale(1.2)`,
+    opacity: 1,
+  },
+  '100%': {
+    transform: `translate(var(--xOffSet), var(--yOffSet)) scale(1)`,
+  },
+});
 
 const spin = keyframes({
   from: {
