@@ -12,14 +12,14 @@ import {
   headlineBox,
   luckyVickyTypography,
   main, share, shareDescription, spin, typographyBox, ohlala, sticker, headerBox, stickerBox, cat,
-  credit, copyright, contributor, name, contributors
+  credit, copyright, contributor, name, contributors, contributorsBox
 } from './style.css.ts'
 
 import headline480x from '../assets/headline-480x.webp'
 import headline768x from '../assets/headline-768x.webp'
 import headline1920x from '../assets/headline-1920x.svg'
-import faceSticker from '../assets/face-sticker.svg'
-import letterSticker from '../assets/letter-sticker.svg'
+import faceSticker from '../assets/face-sticker.webp'
+import letterSticker from '../assets/letter-sticker.webp'
 import heartSticker from '../assets/heart-sticker.svg'
 import smileSticker from '../assets/smile-sticker.svg'
 import catSticker from '../assets/cat-sticker.svg'
@@ -134,12 +134,17 @@ function Footer() {
       <span className={shareDescription} style={{ height: '1rem' }}>{isCopied && '복사되었습니다!'}</span>
 
       <section className={credit}>
-        <section className={contributors}>
-          <p className={contributor}>Design<a href='https://www.instagram.com/yojinius/' className={name}>최여진(@yojinius)</a></p>
-          <p className={contributor}>Development<a href='https://github.com/ENvironmentSet' className={name}>서재원(@homemade.frenchfries)</a></p>
-          <p className={contributor}>Font Design Guidance<a href='https://www.instagram.com/jaehn._.design/' className={name}>조재훈(@jaehn._.design)</a></p>
-        </section>
         <p className={copyright}>© 2024 최여진, CC BY-NC-SA</p>
+        <section className={contributorsBox}>
+          <section className={contributors}>
+            <p className={contributor}>Design<a href='https://www.instagram.com/yojinius/'
+                                                className={name}>최여진(@yojinius)</a></p>
+            <p className={contributor}>Development<a href='https://github.com/ENvironmentSet'
+                                                     className={name}>서재원(@homemade.frenchfries)</a></p>
+            <p className={contributor}>Font Design Guidance<a href='https://www.instagram.com/jaehn._.design/'
+                                                              className={name}>조재훈(@jaehn._.design)</a></p>
+          </section>
+        </section>
       </section>
     </footer>
   )
@@ -151,16 +156,16 @@ interface StickerProps {
   size: string
 }
 
-function Sticker({src, initialPosition, size }: StickerProps) {
-  const { push } = useContext(StickerHelpers)
+function Sticker({src, initialPosition, size}: StickerProps) {
+  const {push} = useContext(StickerHelpers)
 
   return <img
     src={src}
     alt='sticker on page'
-    style={{ top: initialPosition.y, left: initialPosition.x, width: size }}
+    style={{top: initialPosition.y, left: initialPosition.x, width: size}}
     onMouseDown={event => {
       const sticker = event.currentTarget
-      const { x, y, right } = sticker.getBoundingClientRect()
+      const {x, y, right} = sticker.getBoundingClientRect()
       const cursorOffsetX = event.pageX - (x + window.scrollX)
       const cursorOffsetY = event.pageY - (y + window.scrollY)
       const rightEdgeDelta = right - event.clientX

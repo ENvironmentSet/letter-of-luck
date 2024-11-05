@@ -290,8 +290,9 @@ export const spin = style({
 export const credit = style({
   alignSelf: 'stretch',
 
-  display: 'flex',
-  flexDirection: 'column',
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  alignItems: 'end',
 
   height: '6rem',
 
@@ -302,19 +303,26 @@ export const credit = style({
   marginTop: '4.2rem',
 })
 
+export const contributorsBox = style({
+  display: 'flex',
+  flexDirection: 'row-reverse',
+})
+
 export const contributors = style({
-  flex: 1,
-
-  alignSelf: 'flex-end',
-
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  justifyContent: 'space-between'
+  gap: '0.5rem',
 })
 
 export const contributor = style([pretendardText, {
-  margin: '0'
+  margin: '0',
+
+  '@media': {
+    '(max-width: 410px)': {
+      fontSize: '0.85rem'
+    }
+  }
 }])
 
 export const name = style({
@@ -326,7 +334,12 @@ export const name = style({
 
 export const copyright = style([pretendardText, {
   margin: '0',
-  alignSelf: 'flex-start'
+
+  '@media': {
+    '(max-width: 410px)': {
+      fontSize: '0.85rem'
+    }
+  }
 }])
 
 export const sticker= style({
