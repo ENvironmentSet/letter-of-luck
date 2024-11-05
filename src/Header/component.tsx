@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className={header}>
-      <Link to='/' className={link.normal}>LUCKY BIKI YA-YA</Link>
+      <Link to='/' className={link.normal}>LUCKY VICKY YA-YA</Link>
       <nav className={navBox}>
         <ul className={navList}>
           <li>

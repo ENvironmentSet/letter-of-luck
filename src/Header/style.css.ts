@@ -9,8 +9,6 @@ export const header = style({
   display: 'flex',
   alignItems: 'center',
 
-  height: '3.9rem',
-
   padding: '0 1.56rem',
 })
 
@@ -39,8 +37,8 @@ const eventNavItemBase = style({
   backgroundPosition: 'center',
 
   height: '3rem',
-  padding: '0.625rem',
-  marginLeft: '-0.625rem'
+  padding: '1rem',
+  marginLeft: '-1rem'
 })
 
 export const eventNavItem = styleVariants({
@@ -54,6 +52,9 @@ export const eventNavItem = styleVariants({
 
 const linkBase = style([unionText, {
   display: 'block',
+
+  fontSize: '1.5rem',
+  fontWeight: 500,
 
   textDecoration: 'none',
 }])
