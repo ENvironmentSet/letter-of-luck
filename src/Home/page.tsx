@@ -18,11 +18,11 @@ import {
 import headline480x from '../assets/headline-480x.png'
 import headline1200x from '../assets/headline-1200x.png'
 import headline1920x from '../assets/headline-1920x.png'
-import faceSticker from '../assets/face-sticker.webp'
-import letterSticker from '../assets/letter-sticker.webp'
-import heartSticker from '../assets/heart-sticker.png'
-import smileSticker from '../assets/smile-sticker.webp'
-import catSticker from '../assets/cat-sticker.webp'
+import faceSticker from '../assets/face-sticker.svg'
+import letterSticker from '../assets/letter-sticker.svg'
+import heartSticker from '../assets/heart-sticker.svg'
+import smileSticker from '../assets/smile-sticker.svg'
+import catSticker from '../assets/cat-sticker.svg'
 
 export default function Home() {
   const isNarrowDevice = useMediaQuery({ query: '(max-width: 767px)' })
@@ -60,23 +60,22 @@ export default function Home() {
           <Sticker
             src={faceSticker}
             initialPosition={isNarrowDevice ? { x: '60vw', y: '18rem' } : { x: '12vw', y: '5vh' }}
-            size={isNarrowDevice ? '18vw' : '8vw'}
+            size={isNarrowDevice ? '18vw' : '16vw'}
           />
           <Sticker
             src={smileSticker}
             initialPosition={isNarrowDevice ? { x: '0vw', y: '16rem' } : { x: '7vw', y: '30vh' }}
-            size='45vw'
+            size='50vw'
           />
           <Sticker
             src={letterSticker}
             initialPosition={isNarrowDevice ? { x: '72vw', y: '25rem' } : { x: '40vw', y: '26vh' }}
-            size={isNarrowDevice ? '26vw' : '20vw'}
+            size={isNarrowDevice ? '26vw' : '21vw'}
           />
           <Sticker
             src={heartSticker}
             initialPosition={isNarrowDevice ? { x: '60vw', y: '4.2rem' } : { x: '72vw', y: '64vh' }}
             size='21vw'
-            opacity={0.5}
           />
         </StickerSpawnZone>
       </section>
@@ -148,16 +147,15 @@ interface StickerProps {
   src: string
   initialPosition: { x: string, y: string }
   size: string
-  opacity?: number
 }
 
-function Sticker({src, initialPosition, size, opacity = 1}: StickerProps) {
+function Sticker({src, initialPosition, size }: StickerProps) {
   const { push } = useContext(StickerHelpers)
 
   return <img
     src={src}
     alt='sticker on page'
-    style={{ top: initialPosition.y, left: initialPosition.x, width: size, opacity }}
+    style={{ top: initialPosition.y, left: initialPosition.x, width: size }}
     onMouseDown={event => {
       const sticker = event.currentTarget
       const { x, y, right } = sticker.getBoundingClientRect()

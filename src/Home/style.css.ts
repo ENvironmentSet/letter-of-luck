@@ -2,7 +2,7 @@ import { style, styleVariants, keyframes } from '@vanilla-extract/css'
 
 import { luckyVickyText, pretendardText } from '../typography.css.ts'
 import { BLACK, LETTER_BACKGROUND, SECONDARY, SHADOW, TYPOGRAPHY } from '../color.ts'
-import copy from '../assets/copy.jpg'
+import copy from '../assets/copy.svg'
 
 export const heading = style({
   width: '100vw',
@@ -144,8 +144,6 @@ export const congrats = style([luckyVickyText, {
 
 export const cat = style({
   alignSelf: 'flex-end',
-
-  opacity: 0.5,
 
   objectFit: 'contain',
   width: '45vw',

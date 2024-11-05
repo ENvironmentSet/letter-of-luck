@@ -2,8 +2,8 @@ import { style, styleVariants } from '@vanilla-extract/css'
 
 import { plainText, primaryText, unionText } from '../typography.css.ts'
 
-import eventHighlight from '../assets/event-highlight.jpg'
-import eventHighlightActive from '../assets/event-highlight-active.webp'
+import eventHighlight from '../assets/event-highlight.svg'
+import eventHighlightActive from '../assets/event-highlight-active.svg'
 
 export const header = style({
   display: 'flex',
