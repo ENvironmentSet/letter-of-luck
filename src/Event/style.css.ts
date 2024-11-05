@@ -41,7 +41,8 @@ export const title = style([luckyVickyText, {
 }])
 
 export const description = style([pretendardText, {
-  fontSize: '1.2rem',
+  fontSize: '1.1rem',
+  lineHeight: '2rem',
 
   marginTop: '2.8rem',
   marginBottom: '0',
