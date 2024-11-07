@@ -62,7 +62,7 @@ function Letter() {
           placeholder={placeholder}
           onChange={({target: {value}}) => setContent(value)}
           className={letterFace}
-          spellcheck={false}
+          spellCheck={false}
           onMouseEnter={() => {
             if (letterRef.current) letterRef.current.style.animationPlayState = 'paused'
           }}
@@ -81,7 +81,7 @@ function Letter() {
             placeholder={placeholder}
             onChange={({target: {value}}) => setContent(value)}
             className={letterFace}
-            spellcheck={false}
+            spellCheck={false}
             style={{transform: 'rotateY(180deg)'}}
             onMouseEnter={() => {
               if (letterRef.current) letterRef.current.style.animationPlayState = 'paused'
